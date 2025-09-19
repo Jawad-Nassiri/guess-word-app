@@ -1,3 +1,4 @@
+// questions data 
 const questions = [
   {id:1, hint:"Which language structures web pages?", answer:"HTML", score:1},
   {id:2, hint:"Tag for hyperlink?", answer:"a", score:1},
@@ -15,3 +16,35 @@ const questions = [
   {id:14, hint:"Make text bold in HTML?", answer:"b", score:1},
   {id:15, hint:"CSS font-size property?", answer:"font-size", score:1}
 ];
+
+const $ = document,
+  letterBoxContainer = $.querySelector('.letter-grid'),
+  attemptsLeftElem = $.querySelector('.info-value.attempts'),
+  scoreValueElem = $.querySelector('.info-value.score'),
+  currentGuessElem = $.querySelector('.current-word-value'),
+  hintTextElem = $.querySelector('.hint-text'),
+  continueBtn = $.querySelector('.action-btn.primary-btn'),
+  tryAgainBtn = $.querySelector('.action-btn secondary-btn');
+
+const attempts = 3;
+const score = 0;
+
+attemptsLeftElem.textContent = attempts;
+scoreValueElem.textContent = score;
+
+// show hint method 
+const showRandomHint = () => {
+  let randomNum = Math.floor(Math.random() * questions.length);
+  let hintObj = questions[randomNum];
+  let { hint, answer } = hintObj;
+  
+  hintTextElem.textContent = hint;
+
+  for (let i = 1; i <= answer.length; i++) {
+    letterBoxContainer.insertAdjacentHTML('beforeend', `<input type="text" class="letter-box" maxlength="1"/>`);
+  }
+
+}
+
+showRandomHint();
+
