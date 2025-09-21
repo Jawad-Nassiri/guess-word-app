@@ -8,10 +8,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Game Over Modal -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-icon">
+                <i class="fas fa-times-circle"></i>
+            </div>
+            <h2 class="modal-title">Game Over!</h2>
+            <div class="modal-score">
+                Your Final Score
+                <strong></strong>
+            </div>
+            <button class="modal-btn">
+                <i class="fas fa-redo"></i>
+                Start Again
+            </button>
+        </div>
+    </div>
+
     <!-- Toast Container -->
     <div class="toast-container">
         <!-- Success Toast Example -->
-        <div class="toast ">
+        <div class="toast">
             <div class="toast-icon">
                 <i class="fas fa-check"></i>
             </div>
@@ -56,7 +74,7 @@
                     <i class="fas fa-lightbulb"></i>
                     Hint
                 </div>
-                <p class="hint-text">A programming education academy</p>
+                <p class="hint-text"></p>
             </div>
 
             <div class="game-actions">
@@ -64,10 +82,10 @@
                     <i class="fas fa-play"></i>
                     Continue
                 </button>
-                <button class="action-btn secondary-btn">
+                <!-- <button class="action-btn secondary-btn">
                     <i class="fas fa-redo"></i>
                     Try Again
-                </button>
+                </button> -->
             </div>
         </main>
     </div>
